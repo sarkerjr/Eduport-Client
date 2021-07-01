@@ -20,8 +20,8 @@ const Toolbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="#contact" class="nav-links">
-                        Contact
+                    <Link to="/dashboard" class="nav-links">
+                        Dashboard
                     </Link>
                 </li>
                 <li>

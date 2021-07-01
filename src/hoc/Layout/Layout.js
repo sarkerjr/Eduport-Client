@@ -7,7 +7,7 @@ const Layout = (props) => {
     return (
         <React.Fragment>
             <Toolbar />
-            <main>{props.children}</main>
+            <main className="Content">{props.children}</main>
         </React.Fragment>
     );
 };
