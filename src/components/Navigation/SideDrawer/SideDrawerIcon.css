@@ -1,0 +1,10 @@
+.LogoContainer {
+    display: flex;
+    height: 2.5rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.LogoContainer:hover {
+    transform: scale(1.2);
+}
