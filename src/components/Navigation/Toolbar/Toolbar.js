@@ -6,26 +6,26 @@ import SideDrawerIcon from "../SideDrawer/SideDrawerIcon";
 
 const Toolbar = () => {
     return (
-        <nav class="nav-link__container">
-            <SideDrawerIcon class="nav-link__drawer"/>
-            <ul class="nav-link__items">
+        <nav className="nav-link__container">
+            <SideDrawerIcon className="nav-link__drawer"/>
+            <ul className="nav-link__items">
                 <li>
-                    <Link to="/" class="nav-links">
+                    <Link to="/" className="nav-links">
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/login" class="nav-links">
+                    <Link to="/login" className="nav-links">
                         Login
                     </Link>
                 </li>
                 <li>
-                    <Link to="/dashboard" class="nav-links">
+                    <Link to="/dashboard" className="nav-links">
                         Dashboard
                     </Link>
                 </li>
                 <li>
-                    <Link to="#about" class="nav-links">
+                    <Link to="#about" className="nav-links">
                         About
                     </Link>
                 </li>
