@@ -12,7 +12,8 @@ const LoginForm = () => {
     const isAuth = useSelector((state) => state.auth.isAuth);
 
     const dispatch = useDispatch();
-    const userAuthenticate = (email, password) => dispatch(actions.authCheck(email, password));
+    const userAuthenticate = (email, password) =>
+        dispatch(actions.authCheck(email, password));
 
     const inputHandler = (event, inputName) => {
         if (inputName === "loginEmail") setEmail(event.target.value);

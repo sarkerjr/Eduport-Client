@@ -25,8 +25,8 @@ const Toolbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="#about" className="nav-links">
-                        About
+                    <Link to="/logout" className="nav-links">
+                        Logout
                     </Link>
                 </li>
             </ul>
