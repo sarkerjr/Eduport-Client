@@ -9,7 +9,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Logout from "./components/Auth/Logout";
 import * as actions from './store/actions/index';
 
-const App = (props) => {
+const App = () => {
     const isAuth = useSelector(state => state.auth.isAuth);
     const dispatch = useDispatch();
 

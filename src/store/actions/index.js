@@ -2,5 +2,13 @@ export {
     addAuth,
     authCheck,
     authCheckState,
-    logout
+    logout,
 } from './auth';
+
+export {
+    addRoutine
+} from './dashboard';
+
+export {
+    getUserInfo
+} from './user-info';

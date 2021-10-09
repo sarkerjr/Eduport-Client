@@ -1,0 +1,31 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 230px;
+    background: #34495e;
+    z-index: 10;
+}
+
+.sidebar-section {
+    padding: 20px;
+}
+
+.sidebar-section__item {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Raleway';
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    transition: 0.1s;
+}
+
+.sidebar-section__item:hover {
+    transform: scale(1.1);
+}

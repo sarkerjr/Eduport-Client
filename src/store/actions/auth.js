@@ -1,36 +1,8 @@
-import axios from "../../axios-instance";
+import axios from "../../util/axios";
 
 import * as actionTypes from "./actionTypes";
 
-export const addAuth = (result) => {
-    //If there is a previous expiryDate stored, then bypass this part.
-    if(!localStorage.getItem("expiryDate")){
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("userId", result.userId);
-        localStorage.setItem("category", result.category);
-    
-        //Setting a expiry date for the token
-        const remainingMilliseconds = 60 * 60 * 1000; //For an hour
-        const expiryDate = new Date(new Date().getTime() + remainingMilliseconds);
-        localStorage.setItem("expiryDate", expiryDate.toISOString());
-    }
-    return {
-        type: actionTypes.AUTH_SUCCESS,
-        result: result,
-    };
-};
-
-export const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("category");
-    localStorage.removeItem("expiryDate");
-    return {
-        type: actionTypes.AUTH_LOGOUT,
-    };
-};
-
-//Check validity while login
+//Check user validation while login
 export const authCheck = (email, password) => {
     return async (dispatch) => {
         try {
@@ -50,7 +22,7 @@ export const authCheck = (email, password) => {
     };
 };
 
-//check if stored token time is expired
+//check for the stored token expiry date
 export const authCheckState = () => {
     return (dispatch) => {
         const token = localStorage.getItem("token");
@@ -68,3 +40,35 @@ export const authCheckState = () => {
         }
     };
 };
+
+//Adding token to local storage after validation a success
+export const addAuth = (result) => {
+    //If there is a previous expiryDate on token, then it is kept.
+    if(!localStorage.getItem("expiryDate")){
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("userId", result.userId);
+        localStorage.setItem("category", result.category);
+    
+        //Setting a expiry date for the token
+        const remainingMilliseconds = 60 * 60 * 1000; //For an hour
+        const expiryDate = new Date(new Date().getTime() + remainingMilliseconds);
+        localStorage.setItem("expiryDate", expiryDate.toISOString());
+    }
+
+    return {
+        type: actionTypes.AUTH_SUCCESS,
+        result: result,
+    };
+};
+
+export const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("category");
+    localStorage.removeItem("expiryDate");
+    
+    return {
+        type: actionTypes.AUTH_LOGOUT,
+    };
+};
+

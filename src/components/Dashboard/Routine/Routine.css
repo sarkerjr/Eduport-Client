@@ -1,0 +1,71 @@
+.routine-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.routine-heading {
+    display: flex;
+    margin-left: 20px;
+}
+
+.no-routine {
+    display: flex;
+    margin: 20px;
+    color: green;
+}
+
+.routine_list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-left: 20px;
+    margin: 0px;
+    color: white;
+}
+
+
+.routine_list__items {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(29, 208, 208);
+    margin-right: 20px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.routine_list__items:hover {
+    transform: scale(1.05);
+}
+
+.routine_list__items p {
+    display: flex;
+    margin: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.routine_details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.routine_details__time {
+    display: flex;
+    width: 20%;
+}
+
+.routine_details__duration {
+    display: flex;
+    width: 20%;
+}
+
+.routine_details__faculty {
+    display: flex;
+    width: 50%;
+}

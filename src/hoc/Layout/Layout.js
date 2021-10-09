@@ -1,13 +1,13 @@
 import React from "react";
 
 import './Layout.css';
-import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import SideNavigation from '../../components/Navigation/SideNavigation/SideNavigation';
 
 const Layout = (props) => {
     return (
         <React.Fragment>
-            <Toolbar />
-            <main className="Content">{props.children}</main>
+            <SideNavigation />
+            <main className="main-container">{props.children}</main>
         </React.Fragment>
     );
 };

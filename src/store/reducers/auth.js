@@ -13,7 +13,7 @@ const storeAuth = (state, action) => {
         isAuth: true,
         token: action.result.token,
         userId: action.result.userId,
-        category: action.result.category,
+        category: action.result.accountType,
     };
 };
 
