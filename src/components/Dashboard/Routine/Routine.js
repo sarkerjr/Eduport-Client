@@ -5,19 +5,21 @@ import "./Routine.css";
 import * as actions from "../../../store/actions/index";
 
 const Routine = () => {
+    const routine = useSelector((state) => state.dashboard.routine);
+    
     const dispatch = useDispatch();
 
     const addRoutine = useCallback(
         () => dispatch(actions.addRoutine()),
         [dispatch]
     );
+    
     useEffect(() => {
         addRoutine();
     }, [addRoutine]);
 
-    const routine = useSelector((state) => state.dashboard.routine);
 
-    //When there is no routine today
+    //When there is no routine at today's date
     let renderRoutine = routine ? <p className="no-routine">No Routine Found Today.</p> : null;
 
     if(routine && routine.length > 0){

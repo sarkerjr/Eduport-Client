@@ -13,6 +13,7 @@ const UserInfo = () => {
         () => dispatch(actions.getUserInfo()),
         [dispatch]
     );
+
     useEffect(() => {
         getUserInfo();
     }, [getUserInfo]);
@@ -20,7 +21,6 @@ const UserInfo = () => {
     const user = useSelector((state) => state.userInfo.user);
 
     let renderUser = null;
-
     if (user) {
         renderUser = (
             <React.Fragment>

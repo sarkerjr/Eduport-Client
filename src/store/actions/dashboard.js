@@ -10,7 +10,7 @@ export const addRoutine = () => {
                 params: {
                     semester: 2,
                     year: 3,
-                },
+                }
             });
 
             if(routines.data) {

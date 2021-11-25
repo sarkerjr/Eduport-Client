@@ -18,15 +18,15 @@ const rootReducer = combineReducers({
     userInfo: userReducer
 });
 
-//Creating the redux store
-// const store = createStore(
-//     rootReducer,
-//     composeEnhancers(applyMiddleware(thunk))
-// );
-
+// Creating the redux store
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunk)
+    composeEnhancers(applyMiddleware(thunk))
 );
+
+// const store = createStore(
+//     rootReducer,
+//     applyMiddleware(thunk)
+// );
 
 export default store;

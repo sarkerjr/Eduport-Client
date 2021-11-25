@@ -25,7 +25,7 @@ const LoginForm = () => {
 
         userAuthenticate(email, password);
     };
-
+    
     let authRedirect = isAuth ? <Redirect to="/dashboard" /> : null;
     return (
         <React.Fragment>

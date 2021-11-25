@@ -7,7 +7,7 @@ const initialState = {
     category: null,
 };
 
-const storeAuth = (state, action) => {
+const addAuth = (state, action) => {
     return {
         ...state,
         isAuth: true,
@@ -30,7 +30,7 @@ const removeAuth = (state) => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.AUTH_SUCCESS:
-            return storeAuth(state, action);
+            return addAuth(state, action);
         case actionTypes.AUTH_LOGOUT:
             return removeAuth(state);
         default:
