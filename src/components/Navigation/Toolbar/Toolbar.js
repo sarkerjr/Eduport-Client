@@ -1,23 +1,28 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import "./Toolbar.css";
 import SideDrawerIcon from "../SideDrawer/SideDrawerIcon";
 
 const Toolbar = () => {
-    const isAuth = useSelector(state => state.auth.isAuth);
+    const isAuth = useSelector((state) => state.auth.isAuth);
 
     let navItems = null;
     //If user authenticad, nav menu will be shown
-    if(isAuth) {
+    if (isAuth) {
         navItems = (
             <nav className="nav-link__container">
-                <SideDrawerIcon className="nav-link__drawer"/>
+                <SideDrawerIcon className="nav-link__drawer" />
                 <ul className="nav-link__items">
                     <li>
                         <Link to="/dashboard" className="nav-links">
                             Dashboard
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/my-profile" className="nav-links">
+                            Profile
                         </Link>
                     </li>
                     <li>
@@ -30,11 +35,7 @@ const Toolbar = () => {
         );
     }
 
-    return (
-        <React.Fragment>
-            {navItems}
-        </React.Fragment>
-    );
+    return <React.Fragment>{navItems}</React.Fragment>;
 };
 
 export default Toolbar;

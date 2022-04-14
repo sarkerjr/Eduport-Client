@@ -17,6 +17,9 @@ const Toolbar = () => {
                     <div className="sidebar-section__item">
                         <Link className="sidebar-section__item" to="/dashboard">Dashboard</Link>
                     </div>
+                    <div className="sidebar-section__item">
+                        <Link className="sidebar-section__item" to="/pofile">Profile</Link>
+                    </div>
                 </div>
                 
                 {/* This section is at the bottom */}

@@ -2,6 +2,7 @@
 
 #Dev Only
 /practice
+nodemon.json
 
 # dependencies
 /node_modules
