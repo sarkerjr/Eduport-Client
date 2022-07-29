@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://localhost:8080/",
+    baseURL: "https://eduport-server.herokuapp.com/",
 });
 
 //Intercept all the requests to enter updated token and handle errors
