@@ -10,6 +10,7 @@ const Dashboard = () => {
         <div className="dashboard-container">
             <Routine className="routine"/>
             <Calendar className="calendar"/>
+            <Routine className="user-info"/>
         </div>
     )
 }

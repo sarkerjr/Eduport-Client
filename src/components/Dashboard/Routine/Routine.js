@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import "./Routine.css";
 import * as actions from "../../../store/actions/index";
 
 const Routine = () => {
@@ -17,32 +16,28 @@ const Routine = () => {
         addRoutine();
     }, [addRoutine]);
 
-    //When there is no routine at today's date
+    //When there is no routine on today's date
     let renderRoutine = routine ? (
-        <p className="flex m-5 ml-0 text-green-900">No Routine Found Today.</p>
+        <p classNameName="flex m-5 ml-0 text-green-900">
+            No Routine Found Today.
+        </p>
     ) : null;
 
     if (routine && routine.length > 0) {
         renderRoutine = routine.map((routine, index) => {
             return (
                 <li
-                    className="mr-5 mb-1 flex flex-col rounded-sm bg-teal-400 p-2 duration-300 hover:scale-105"
+                    className="mb-0.5 w-full flex flex-col bg-white p-2 text-black"
                     key={index}
                 >
                     <p>
                         <b>{routine.course_assigned_to.course.courseName}</b>
                     </p>
                     <div className="mt-1 flex flex-row">
-                        <div className="flex w-1/5">
-                            <p>{routine.time}</p>
-                            <p>{routine.period}</p>
+                        <div className="flex w-1/3">
+                            <p>{` ${routine.time} ${routine.period} - ${routine.duration} hr`}</p>
                         </div>
-                        <p>/</p>
-                        <div className="flex w-1/5">
-                            <p>{routine.duration}</p>
-                            <p>hr</p>
-                        </div>
-                        <p className="flex w-6/12">
+                        <p className="flex ml-1 w-2/3 text-ellipsis">
                             {routine.course_assigned_to.faculty.name}
                         </p>
                     </div>
@@ -52,9 +47,13 @@ const Routine = () => {
     }
 
     return (
-        <div className="scroll card m-1 flex flex-col overflow-y-scroll p-1">
-            <h3 className="ml-5 flex text-xl font-bold">Today's Routine</h3>
-            <ul className="scroll m-0 flex h-60 flex-col overflow-y-scroll pl-5 text-white">{renderRoutine}</ul>
+        <div className="scroll bg-routine-bg m-2 flex flex-col overflow-y-scroll shadow-md">
+            <h3 className="mb-px flex p-2 bg-routine-title-bg text-white">
+                Today's Routine
+            </h3>
+            <ul className="scroll flex flex-col h-60 w-full overflow-y-scroll text-white">
+                {renderRoutine}
+            </ul>
         </div>
     );
 };
