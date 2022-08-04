@@ -1,7 +1,5 @@
 .calendar-container {
     grid-area: calendar;
-    margin: 5px;
-    padding: 5px;
 }
 
 .calendar-img {

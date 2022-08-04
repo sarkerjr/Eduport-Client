@@ -6,7 +6,8 @@ export {
 } from './auth';
 
 export {
-    addRoutine
+    addRoutine,
+    addEvents
 } from './dashboard';
 
 export {

@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import * as actions from "../../../store/actions/index";
+import * as actions from "../../store/actions/index";
 
 const Routine = () => {
     const routine = useSelector((state) => state.dashboard.routine);
@@ -18,9 +18,7 @@ const Routine = () => {
 
     //When there is no routine on today's date
     let renderRoutine = routine ? (
-        <p classNameName="flex m-5 ml-0 text-green-900">
-            No Routine Found Today.
-        </p>
+        <p className="flex m-5 ml-0 text-green-900">No Routine Found Today.</p>
     ) : null;
 
     if (routine && routine.length > 0) {
@@ -47,11 +45,11 @@ const Routine = () => {
     }
 
     return (
-        <div className="scroll bg-routine-bg m-2 flex flex-col overflow-y-scroll shadow-md">
+        <div className="scroll bg-routine-bg flex flex-col overflow-y-scroll shadow-md">
             <h3 className="mb-px flex p-2 bg-routine-title-bg text-white">
                 Today's Routine
             </h3>
-            <ul className="scroll flex flex-col h-60 w-full overflow-y-scroll text-white">
+            <ul className="scroll flex flex-col w-full overflow-y-scroll text-white">
                 {renderRoutine}
             </ul>
         </div>

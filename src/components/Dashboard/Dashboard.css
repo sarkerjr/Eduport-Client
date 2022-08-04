@@ -1,13 +1,16 @@
 .dashboard-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "routine calendar user-info"
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "routine calendar event"
+                            ". . ."
                             ". . .";
     width: 100%;
     min-width: 1100px;
     height: 100vh;
     padding: 8px;
+    row-gap: 8px;
+    column-gap: 8px;
     background-color: #eff4f9;
 }
 
@@ -19,8 +22,8 @@
     grid-area: calendar;
 }
 
-.user-info {
-    grid-area: user-info;
+.event {
+    grid-area: event;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
